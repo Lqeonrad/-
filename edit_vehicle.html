@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>编辑车辆</title>
+</head>
+<body>
+    <h1>编辑车辆</h1>
+    <form action="{{ url_for('edit_vehicle', vehicle_id=vehicle.vehicle_id) }}" method="post">
+        <label for="vehicle_model">车型:</label>
+        <input type="text" id="vehicle_model" name="vehicle_model" value="{{ vehicle.vehicle_model }}" required><br><br>
+
+        <label for="vehicle_type">车辆类型:</label>
+        <input type="text" id="vehicle_type" name="vehicle_type" value="{{ vehicle.vehicle_type }}" required><br><br>
+
+        <label for="registration_number">注册号:</label>
+        <input type="text" id="registration_number" name="registration_number" value="{{ vehicle.registration_number }}" required><br><br>
+
+        <label for="rent_price">租金:</label>
+        <input type="text" id="rent_price" name="rent_price" value="{{ vehicle.rent_price }}" required><br><br>
+
+        <input type="submit" value="保存更改">
+    </form>
+    <br>
+    <a href="{{ url_for('index') }}">返回车辆列表</a>
+</body>
+</html>

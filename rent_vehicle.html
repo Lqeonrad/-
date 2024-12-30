@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>租赁车辆</title>
+</head>
+<body>
+    <h1>租赁车辆</h1>
+    <form action="{{ url_for('rent_vehicle_view', vehicle_id=vehicle_id) }}" method="post">
+        <label for="customer_id">客户ID:</label>
+        <input type="text" id="customer_id" name="customer_id" required><br><br>
+
+        <label for="rental_start_date">租赁开始日期:</label>
+        <input type="date" id="rental_start_date" name="rental_start_date" required><br><br>
+
+        <label for="rental_end_date">租赁结束日期:</label>
+        <input type="date" id="rental_end_date" name="rental_end_date" required><br><br>
+
+        <input type="submit" value="确认租赁">
+    </form>
+    <br>
+    <a href="{{ url_for('index') }}">返回车辆列表</a>
+</body>
+</html>

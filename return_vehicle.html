@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>归还车辆</title>
+</head>
+<body>
+    <h1>归还车辆</h1>
+    <form action="{{ url_for('return_vehicle_view', vehicle_id=vehicle_id) }}" method="post">
+        <label for="return_date">归还日期:</label>
+        <input type="date" id="return_date" name="return_date" required><br><br>
+
+        <input type="submit" value="确认归还">
+    </form>
+    <br>
+    <a href="{{ url_for('index') }}">返回车辆列表</a>
+</body>
+</html>
